@@ -1,0 +1,29 @@
+Start
+    display title
+    Display supported currencies
+    prompt user for base_currency
+    convert base_currency to uppercase
+    if base_currency is not in supported currencies
+        display error message
+        exit
+    prompt user for target_currency
+    convert target_currency to uppercase
+    if target_currency is not a supported currencie
+        display error message
+        exit
+    prompt user for amount to convert
+    try to convert input to float
+        if conversion fails(invalid amount)
+            display error message
+            exit
+    call function get_exchange_rate with base_currency and target_currency
+        make an API call to get exchange rates
+        if API requests fails, print error and return none 
+        if target_currency is in reponse data, return conversion rate
+            else, print error and return none 
+    if exchange rate is valid
+        calculate converted amount by multiplying amount by exchange rate
+        print converted amount with base_currency and target_currency
+    else
+        print error 
+end
